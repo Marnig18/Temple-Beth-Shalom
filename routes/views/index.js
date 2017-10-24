@@ -3,13 +3,31 @@ var moment = require('moment')
 
 exports = module.exports = function (req, res) {
 
-	var view = new keystone.View(req, res);
+	var view = new keystone.View(req, res),
 	var locals = res.locals;
 
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
 	locals.section = 'home';
+	locals.data = {
+	  events: []
+	};
+
+	view.on('init', function(next){
+
+	  keystone.list('Event').model.find().exec(function(err, res){
+
+			locals.data.events = res;
+
+			console.log(res)
+			next(err)
+
+
+		})
+
+	});
+
 
 	// Render the view
-	view.render('index');
+	view.render('index')
 };
