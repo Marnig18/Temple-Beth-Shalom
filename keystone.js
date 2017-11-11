@@ -32,6 +32,13 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'N',
+	'mongo': process.env.MONGO_URI || 'mongodb://localhost:27017/temple-beth-shalom'
+
+
+
+
+
+
 });
 
 // Load your project's Models

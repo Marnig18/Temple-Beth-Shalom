@@ -8,6 +8,7 @@
  * modules in your project's /lib directory.
  */
 var _ = require('lodash');
+var axios = require ('axios')
 
 
 /**
@@ -20,14 +21,21 @@ var _ = require('lodash');
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
 		{ label: 'Home', key: 'home', href: '/' },
-		{ label: 'Blog', key: 'blog', href: '/blog' },
-		{ label: 'Gallery', key: 'gallery', href: '/gallery' },
-		{ label: 'Contact', key: 'contact', href: '/contact' },
+		{ label: 'Reb on the Web', key: 'blog', href: '/blog' },
+		// { label: 'Gallery', key: 'gallery', href: '/gallery' },
+		// { label: 'Contact', key: 'contact', href: '/contact' },
+	]
+
+	res.locals.community  = [
+		{label: "Teen Committee", key: 'teen', href: '/teencommittee'},
+		{label: "Sisterhood", key: 'sisterhood', href: '/sisterhood'},
+		{label: "Ritual Committee", key: 'ritual', href: '/ritualcommittee'},
+		{label: "Mens Club", key: 'mens', href: '/mensclub'},
 	];
+
 	res.locals.user = req.user;
 
 	next();
-
 
 };
 
@@ -58,3 +66,10 @@ exports.requireUser = function (req, res, next) {
 		next();
 	}
 };
+
+
+exports.getEvents = function(req, res, next){
+ 		return axios.get('/')
+
+		 next();
+}

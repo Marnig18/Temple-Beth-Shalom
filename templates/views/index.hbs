@@ -1,11 +1,4 @@
-{{!< default}}
-<div class="container" id="header">
-	<div class="row">
-		<div class="col s12 center-align">
-			<h1>Temple Beth Shalom</h1>
-		</div>
-	</div>
-</div>
+
 <div id="philosophyDiv">
 	<div class="row">
 		<h3 class="center-align topRow">
@@ -54,8 +47,9 @@
 
 					</div>
 					<div class="card-action right-align">
-						<i class="material-icons">email</i>
-						<i class="material-icons ">local_phone</i>
+						<a href="mailto:rabbiira@aol.com"><i class="material-icons">email</i></a>
+						<!-- <i class="material-icons ">local_phone</i> -->
+						<i class="activator material-icons ">info</i>
 					</div>
 				</div>
 				<div class="card-reveal">
@@ -78,7 +72,8 @@
 					</div>
 					<div class="card-action right-align">
 						<i class="material-icons">email</i>
-						<i class="material-icons ">local_phone</i>
+						<!-- <i class="material-icons ">local_phone</i> -->
+						<i class="activator material-icons ">info</i>
 					</div>
 				</div>
 				<div class="card-reveal">
@@ -127,9 +122,10 @@
 				</li>
 			</ul>
 		</div>
-		<div class="col s12 m6">
+		<div class="col s12 m5">
 			<div id="calendar"></div>
 		</div>
+		<div class="col m1 hide-on-small-only"></div>
 	</div>
 </div>
 <div  id="locationDiv">
@@ -169,28 +165,115 @@
 					<i class="small material-icons">email</i>
 				</div>
 				<div class="col s11 center-align contact-text">
-					<p>templebeth@aol.com</p>
+					<a id="temple-email" href="mailto:templebeth@aol.com"<p>templebeth@aol.com</p></a>
 				</div>
 			</div>
 		</div>
 		<div class= "col m1 hide-on-small-only"></div>
 	</div>
 </div>
-</div>
+
+
 
 <script>
+	$(document).ready(function() {
+
+		var decodedJson = decodeURIComponent("{{{encodedJson}}}");
+		var jsonObj = JSON.parse(decodedJson);
+
+
+		var events = []
+		var last = (jsonObj.length -1)
+		var doc = jsonObj[last]
+
+
+function isRecurring(event){
+
+			var days =[]
+					if(event.Monday){
+						days.push(1)
+					}
+				 if(event.Tuesday){
+						days.push(2)
+					}
+					if(event.Wednesday){
+						days.push(3)
+					}
+				 if(event.Thursday){
+						days.push(4)
+					}
+					if(event.Friday){
+						days.push(5)
+					}
+			 	if(event.Saturday){
+						days.push(6)
+					}
+					if(event.Sunday){
+						days.push(7)
+					}
+				event.dow = days
+
+}
+var startTime = 0
+var endTime = 0
 
 
 
-$(document).ready(function() {
+
+	function transformEventData(event){
+
+						events.push({
+						title: event.title,
+						description: event.description,
+						start: moment(event.start).format('YYYY-MM-DD'),
+						businessHours: {
+							dow: event.dow,
+							start: moment(event.start).format('hh:mm a'),
+							end: moment(event.end).format('hh:mm a')
+							}
+						})
+					}
 
 
-		// page is now ready, initialize the calendar...
+function run(doc){
+	doc.map(event =>{
+		if(event.recurring){
+			isRecurring(event)
+			getTime(event)
+			transformEventData(event)
+		}
+		else{
+			events.push({
+				title: event.title,
+				start: moment(event.start).format("YYYY-MM-DD hh:mm a"),
+				end: moment(event.end).format("YYYY-MM-DD hh:mm a"),
+				description: event.description
+			})
+		}
+})
+}
+		run(doc)
+		console.log(events)
 
-		$('#calendar').fullCalendar({
 
-	})
 
+			// page is now ready, initialize the calendar...
+
+
+
+
+
+			$('#calendar').fullCalendar({
+				header:{
+					left: 'prev,today,next',
+					center: 'title',
+					right: 'month,agendaWeek,agendaDay'
+				},
+
+				events: events
+
+	});
 });
 
-</script>
+
+	</script>

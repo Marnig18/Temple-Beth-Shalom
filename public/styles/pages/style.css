@@ -3,17 +3,20 @@
 }
 
 :root{
-  --background1: #F7FCFF;
-  --background2: #f2f7f9;
+  /*--background1: #F7FCFF;*/
+  --background1: #EFEFEF;
+  /*--background2: #f2f7f9;*/
+  --background2: #F2F2F2;
+
   --sectionHeaderColor: #dcae1d;
   --Bree: 'Bree Serif', serif;
   --openSans: 'Open Sans', sans-serif;
 
-  --blue: #3B94A1;
-  --grey: #655B66;
-  --indigo: #264653;
-  --yellow: #E9C46A;
-  --brown: #F4A261;
+  --dark-blue: #011936;
+  --white: #fff;
+  --light-blue: #3399CC;
+  --tan: #CDB99C;
+  --red: #330000;
 }
 /*#cae4db*/
 /*#7a9d96*/
@@ -24,13 +27,23 @@
 /*#3B94A1-blue*/
 /*#E69C43-orange*/
 /*#945D4F-bronze*/
-/*#655B66-purple*/
+/*#655B66-purple*
 
 
 
-/*Overal Formating*/
+/*Overall Formating*/
+nav{
+  background-color: var(--dark-blue);
+  padding: 0 10px;
+  padding-left: 30px;
+  font-family: 'Bree Serif', serif;
+}
+
+
+
+
 #header{
-  background-color: var(--blue);
+  background-color: var(--light-blue);
   padding: 0;
   margin: 0;
   width: 100%;
@@ -38,11 +51,17 @@
 
 }
 
-#philosophyDiv, #eventsDiv {
+#philosophyDiv{
   background-color: var(--background1);
   margin-bottom: 0;
   margin-top: 0;
-  height: 100vh;
+}
+
+ #eventsDiv {
+  background-color: var(--background1);
+  margin-bottom: 0;
+  margin-top: 0;
+  /*height: 100vh;*/
   /*margin: 0;*/
   /*width: 100%*/
 }
@@ -50,7 +69,7 @@
 #peopleDiv, #locationDiv{
   background-color: var(--background2);
   margin-top: 0;
-  height: 100vh
+  /*height: 100vh*/
 
   /*margin: 0;*/
   /*width: 100%;*/
@@ -60,25 +79,46 @@
 #header h1{
     font-family: 'Bree Serif', serif;
     font-size: 4.5em;
+    color: #E2E2E2;
+    margin-bottom: 0
 }
 
-p{
+#header h5{
+  margin-top: 0;
+  font-family:'Bree Serif', serif;
+  color:#E2E2E2;
+
+}
+
+p, h4{
   font-family: 'Open Sans', sans-serif;
 }
 
 
-h3{
+
+
+
+h3, #blog-title{
   /*color: #afd275;*/
   font-family:'Bree Serif', serif;
-  color: #655B66;
+  color: var(--dark-blue)
+  /*#655B66;*/
+}
+
+#blog-title{
+  padding-bottom: 30px;
 }
 
 .topRow{
-  padding: 2% 0;
+  padding: 3% 0 2% 0;
+  margin: 0;
 }
 
 .bottomRow{
-    margin-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 5%;
+
+
 }
 
 
@@ -87,11 +127,14 @@ h3{
 /*Phiosolphyh Div Formatting*/
 
 #philText, #cupImg{
-  padding-top: 50px;
+  font-size: 1.1em;
+
+
+
 }
 
 #cupImg{
-  max-height: 260px;
+  max-height: 200px;
 
 }
 
@@ -100,7 +143,7 @@ h3{
 /*People Div Formating*/
 
 .card{
-  background-color: var(--indigo);
+  background-color: var(--tan);
   width: 100%;
   height: 300px;
 
@@ -117,6 +160,10 @@ h3{
   border: none;
 }
 
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating){
+  margin: 0;
+}
+
 .first-line{
   font-size: 1.9em;
 }
@@ -126,26 +173,34 @@ h3{
 }
 #card-title{
 
-  color: #fff;
+  color: var(--dark-blue);
   font-family: 'Open Sans', sans-serif;
 
 }
 
 .card .material-icons{
-  color: #fff;
+  color: var(--dark-blue);
+}
+.card .material-icons:hover{
+  font-size: 30px;
 }
 
 .card .card-reveal{
-  background-color: var(--indigo)
+  background-color: var(--tan)
 }
 
 .card .card-reveal p{
-  color: #fff;
+  color: var(--dark-blue);
 }
 
 .card .card-reveal .card-title {
-  color: #fff;
+  color: var(--dark-blue);
+  font-weight: 400
 }
+
+
+
+
 
 
 /*Events Div*/
@@ -157,13 +212,13 @@ h3{
 }
 
 .collapsible-header{
-  background-color: var(--grey);
-  border-bottom: 2px solid #554d56;
+  background-color: var(--red);
+  border-bottom: 2px solid #210000;
 }
 
 .collapsible-body{
-  background-color: var(--grey);
-  border-bottom: 1px solid #554d56;
+  background-color: var(--red);
+  border-bottom: 1px solid #210000;
 }
 
 .collapsible-body p{
@@ -178,7 +233,7 @@ h3{
 /*Contact Div*/
 
 #contact-list{
-  background-color: var(--yellow);
+  background-color: var(--tan);
   padding: 5%;
   border-radius: 5px;
 
@@ -190,8 +245,125 @@ h3{
 
 }
 
+.contact-row material-icons{
+    color: var(--dark-blue);
+}
+
 
 .contact-text p {
   margin: 0 0;
-  font-family:
+  font-family: 'Bree Serif', serif;
+  color: var(--dark-blue);
+  font-size: 1.1em
+
+}
+
+#temple-email{
+  text-decoration: none;
+  color: var(--dark-blue);
+  font-family: 'Bree Serif', serif;
+  font-size: 1.1em
+}
+
+
+
+
+
+/*All Blogs page*/
+
+#indiv-article-title{
+  padding-bottom: 30px;
+  font-size: 30px;
+  font-family: 'Bree Serif', serif;
+  color: var(--dark-blue);
+  padding-top: 30px
+}
+
+#indiv-article-content p{
+
+  color: var(--dark-blue);
+}
+
+
+.links{
+  color: var(--light-blue)
+}
+
+.links:hover{
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+.divider{
+  margin-top: 30px;
+}
+
+.blog-body{
+  background-color: var(--background2);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+
+#article-titles{
+  background-color: var(--indigo);
+  padding: 3% 1%;
+}
+
+#all-div{
+  font-size: 1.5em;
+  color: white;
+  font-family: 'Bree Serif', serif;
+}
+
+#article-titles a{
+  color: white;
+  position: relative;
+  left: 7px;
+
+}
+#article-titles a:hover{
+  font-size: 1.05em;
+
+}
+
+
+
+/*Posts*/
+
+
+
+.post-body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: var(--background2)
+}
+
+
+#blog-post-title{
+  padding-bottom: 40px;
+  font-family: 'Bree Serif', serif;
+}
+
+.post{
+  padding: 0 8%
+}
+
+
+
+#community-dropdown{
+  left: -35px;
+
+}
+
+#community-dropdown li{
+  width: 100%
 }

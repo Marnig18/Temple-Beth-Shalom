@@ -4,16 +4,20 @@
   "private": true,
   "dependencies": {
     "async": "2.1.4",
+    "axios": "^0.17.0",
     "cloudinary": "1.7.0",
     "dotenv": "4.0.0",
     "express-handlebars": "3.0.0",
-    "fullcalendar": "^3.6.1",
+    "fullcalendar": "^3.6.2",
+    "google-auth-library": "^0.11.0",
+    "googleapis": "^22.2.0",
     "handlebars": "4.0.6",
     "keystone": "4.0.0-beta.5",
     "lodash": "^4.13.1",
     "moment": "^2.17.1",
     "node-sass": "4.5.0",
-    "node-sass-middleware": "0.11.0"
+    "node-sass-middleware": "0.11.0",
+    "require": "^2.4.20"
   },
   "devDependencies": {
     "eslint": "3.15.0",
