@@ -31,7 +31,29 @@ exports.initLocals = function (req, res, next) {
 		{label: "Sisterhood", key: 'sisterhood', href: '/sisterhood'},
 		{label: "Ritual Committee", key: 'ritual', href: '/ritualcommittee'},
 		{label: "Mens Club", key: 'mens', href: '/mensclub'},
+		{label: "TBS Cares", key: 'TBScares', href: '/tbscares'}
 	];
+
+	res.locals.education = [
+		{label: "Religious School", key: 'religiousSchool', href: '/religiousschool'},
+		{label: "B'nai Mitzvah", key: 'Bnaimitzvah', href: '/bnaimitzvah'},
+		{label: "Adult Education", key: 'adultedu', href: '/adultedu'}
+	]
+
+	res.locals.worship = [
+		{label: "High Holidays", key: 'highholidays', href: '/highholidays'},
+		{label: "Prayers", key: 'prayers', href: '/prayers'}
+	]
+
+	res.locals.about = [
+		{label: "Philosophy", key: 'philosohy', href: '#philosophyDiv'},
+		{label: "Calendar", key: 'calendar', href: '#eventsDiv'},
+		{label: "Board of Trustees", key: 'board', href: '/board'},
+		{label: "Location", key: 'location', href: '#locationDiv'},
+		{label: "Staff", key: 'staff', href: '/staff'},
+	]
+
+
 
 	res.locals.user = req.user;
 
@@ -66,10 +88,3 @@ exports.requireUser = function (req, res, next) {
 		next();
 	}
 };
-
-
-exports.getEvents = function(req, res, next){
- 		return axios.get('/')
-
-		 next();
-}

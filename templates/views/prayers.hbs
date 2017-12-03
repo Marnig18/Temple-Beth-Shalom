@@ -1,0 +1,150 @@
+<div>
+  <div class="row ">
+    <div class="col s12">
+      <h3 class="center-align">Prayer Page</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s8 offset-s2 section">
+      <div class="row">
+        <div class="col s12">
+          <h5 class="left-align"> Torah Prayers</h5>
+        </div>
+      </div>
+    <ul class="collapsible" data-collapsible="expandable">
+      <li>
+        <div class="row collapsible-header">
+          <div class="col s4">
+            <p>Blessing Before the Torah Reading</p>
+          </div>
+          <div class="col s4">
+              <p><i class="material-icons audio-icon">audiotrack</i>audio</p>
+          </div>
+          <div class="col s4">
+            <p><i class="material-icons">title</i>text</p>
+          </div>
+        </div>
+        <div class="collapsible-body">
+          <div class="row player">
+            <div class="col s1 offset-s2">
+              <i class="material-icons" id="play-btn" data-audio="before-torah">play_arrow</i>
+            </div>
+            <div class="col s6">
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+          <img src="/audio/text/blessing-before-the-torah.gif" alt='blessing-before-the-torah'>
+        </div>
+      </li>
+      <li>
+        <div class="row collapsible-header">
+          <div class="col s4">
+            <p>Blessing After the Torah Reading</p>
+          </div>
+          <div class="col s4" >
+              <p><i class="material-icons audio-icon" data-audio="after-torah">audiotrack</i>audio</p>
+          </div>
+          <div class="col s4">
+            <p><i class="material-icons">title</i>text</p>
+          </div>
+        </div>
+          <div class="collapsible-body">
+            <div class="row">
+              <div class="col s6 offset-s3 player">
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          <img src="/audio/text/torah-after.gif" alt='blessing-after-the-torah'>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="col s8 offset-s2 section">
+    <div class="row">
+      <div class="col s12">
+        <h5 class="left-align">Haftorah Prayers</h5>
+      </div>
+    </div>
+    <ul class="collapsible" data-collapsible="expandable">
+      <li>
+        <div class="row collapsible-header">
+          <div class="col s4">
+            <p>Blessing Before the Haftorah</p>
+          </div>
+          <div class="col s4" data-audio="before-haftorah">
+              <p><i class="material-icons">audiotrack</i>audio</p>
+          </div>
+          <div class="col s4">
+            <p><i class="material-icons">title</i>text</p>
+          </div>
+        </div>
+        <div class="collapsible-body">
+          <img src="/audio/text/haftorah-before.gif" alt='haftorah-before'>
+        </div>
+      </li>
+      <li>
+        <div class="row collapsible-header">
+          <div class="col s4">
+            <p>Blessing After the Haftorah</p>
+          </div>
+          <div class="col s4" data-audio="after-haftorah">
+              <p><i class="material-icons">audiotrack</i>audio</p>
+          </div>
+          <div class="col s4">
+            <p><i class="material-icons">title</i>text</p>
+          </div>
+        </div>
+        <div class="collapsible-body">
+          <img src="/audio/text/haftorah-after.jpg" alt='haftorah-after'>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<audio class="torah" data-audio="before-torah" src="/audio/audio/Torah-Before.mp3" preload="auto" ></audio>
+<audio class="torah" data-audio="after-torah" src="/audio/audio/Torah-After.mp3" preload="auto" ></audio>
+
+
+
+<script>
+
+
+
+  const torahPrayers= document.getElementsByClassName('torah')
+  const icons = Array.from(document.getElementsByClassName('audio-icon'))
+
+  console.log(icons)
+  const playBtns = document.getElementById('play-btn')
+
+
+
+  playBtns.addEventListener('click', function(e){
+    console.log(e)
+    var id = e.srcElement.dataset.audio
+    var idString = id.toString();
+    console.log(idString)
+    const prayer = document.querySelector(`audio[data-audio="${idString}"]`)
+    if (!prayer) return;
+
+    playBtns.classList.add('playing');
+    prayer.currentTime = 0;
+    prayer.play();
+  })
+
+
+
+
+
+
+
+
+
+
+</script>

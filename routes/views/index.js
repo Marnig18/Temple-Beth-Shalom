@@ -1,6 +1,6 @@
 var keystone = require('keystone');
 var moment = require('moment')
-var data = []
+
 
 
 exports = module.exports = function (req, res) {
@@ -13,25 +13,21 @@ exports = module.exports = function (req, res) {
 	// item in the header navigation.
 	locals.section = 'home';
 	locals.data = {
-	  events: []
+	  happenings: [],
 	};
 
-	view.on('init', function (next) {
-		keystone.list('Event').model.find().exec(function(err, results){
-			{
-
-				locals.data.events = results
-				data.push(results)
-				console.log(results)
-				next(err);
+	view.on('init', function(next){
+	 	keystone.list('Happening').model.find().exec(function(err, results){
+			if (err || !results.length) {
+				return next(err);
 			}
-		 });
-	});
-
+			locals.data.happenings = results
+			console.log(locals.data.happenings)
+			next(err)
+		})
+ })
 
 	// Render the view
-	view.render('index',
-		{encodedJson : encodeURIComponent(JSON.stringify(data))
-	});
+	view.render('index',locals.data.happenings);
 
 };

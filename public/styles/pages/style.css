@@ -4,7 +4,7 @@
 
 :root{
   /*--background1: #F7FCFF;*/
-  --background1: #EFEFEF;
+  --background1: #EDEDED;
   /*--background2: #f2f7f9;*/
   --background2: #F2F2F2;
 
@@ -12,11 +12,13 @@
   --Bree: 'Bree Serif', serif;
   --openSans: 'Open Sans', sans-serif;
 
-  --dark-blue: #011936;
+  --dark-blue: #011936 ;
   --white: #fff;
   --light-blue: #3399CC;
   --tan: #CDB99C;
   --red: #330000;
+
+  /**/
 }
 /*#cae4db*/
 /*#7a9d96*/
@@ -30,44 +32,199 @@
 /*#655B66-purple*
 
 
-
 /*Overall Formating*/
 nav{
-  background-color: var(--dark-blue);
+  background-color: #011936;
   padding: 0 10px;
   padding-left: 30px;
   font-family: 'Bree Serif', serif;
 }
 
+nav ul{
+  padding-top: 10px;
+}
 
+.nav-content p{
+  margin-bottom: 0;
+  position: relative;
+  bottom: 15px;
+}
+
+#body{
+  background-color: var(--background2)
+}
+
+
+a.disabled {
+    pointer-events: none;
+}
+
+.button{
+  background-color: var(--light-blue);
+  font-family:'Open Sans', sans-serif;
+}
+
+.button:hover{
+  background-color: var(--light-blue)
+}
+
+.button:focus{
+  background-color: var(--light-blue)
+}
 
 
 #header{
-  background-color: var(--light-blue);
+  /*background-color: #F3E3C8;*/
+  background-image: url('/images/glass.jpg');
+  background-repeat: no-repeat;
+  background-position: cover;
+  background-size: cover;
+
+  /*opacity: 0.7;*/
   padding: 0;
   margin: 0;
-  width: 100%;
+  min-width: 100%;
   color: white;
 
 }
 
+#header .row{
+  margin-left: 0px;
+  margin-right: 0;
+}
+
+.cup-head-div{
+    flex-basis: 20%;
+    /*background-color: #f3e3c8;*/
+    max-height: 124px;
+    position: relative;
+    /*top: 40px;*/
+}
+
+.cup-head{
+  max-height: 124px;
+}
+
+#left-cup{
+  position: relative;
+  left: 100px
+}
+
+#right-cup{
+  position: relative;
+  left: 110px
+}
+
+
+.flex{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+}
+.whole-head{
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  width: 100%;
+  background-color: #fffbea;
+  max-height: 124px;
+  position: relative;
+  top: 10px;
+  margin: 30px 0;
+}
+
+
+/*
+.flex2{
+  display: flex;
+  flex-direction: column;
+}*/
+
+.border{
+  min-height: 16px;
+  background-color: #fff
+}
+
+.header-text{
+  /*background-color: #f3e3c8;*/
+  flex-basis: 60%
+
+
+
+  /*box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+  /*border-bottom: 9px solid  #bfeaff;
+  border-top: 9px solid  #bfeaff;
+*/
+
+
+
+}
+
+
+/*#header img{
+  width: 100%;
+}
+*/
+
+#scroll-left{
+
+  position: relative;
+  left: 5px;
+
+}
+
+
+#scroll-right{
+  position: relative;
+  right: 5px;
+}
+
+
+.page-footer{
+  background-color: var(--dark-blue)
+}
+
+.footer-column p{
+  font-size: 16px;
+
+}
+
+
+
+
+
+
+
+
 #philosophyDiv{
-  background-color: var(--background1);
+  background-color: #e2f6ff;
   margin-bottom: 0;
   margin-top: 0;
 }
 
+
+
+
  #eventsDiv {
-  background-color: var(--background1);
+  background-color: #e2f6ff;
   margin-bottom: 0;
   margin-top: 0;
-  /*height: 100vh;*/
+
+  /*max-height: 100vh;*/
   /*margin: 0;*/
   /*width: 100%*/
 }
 
-#peopleDiv, #locationDiv{
-  background-color: var(--background2);
+#peopleDiv{
+  margin-top: 0;
+  background: linear-gradient(to bottom right, rgba(51, 153, 204,0.65), white);
+  border-top: 10px solid var(--dark-blue);
+  border-bottom: 10px solid var(--dark-blue);
+}
+
+ #locationDiv{
+  background-color: var(--background1);
   margin-top: 0;
   /*height: 100vh*/
 
@@ -79,14 +236,31 @@ nav{
 #header h1{
     font-family: 'Bree Serif', serif;
     font-size: 4.5em;
-    color: #E2E2E2;
-    margin-bottom: 0
+    color:var(--dark-blue);
+    margin-bottom: 0;
+    margin-top: 1%;
+
+
 }
+
+#header .row{
+  margin-bottom: 0;
+}
+
+
+.scroll{
+  max-height: 200px;
+
+
+
+}
+
+
 
 #header h5{
   margin-top: 0;
   font-family:'Bree Serif', serif;
-  color:#E2E2E2;
+  color:var(--dark-blue);
 
 }
 
@@ -145,10 +319,10 @@ h3, #blog-title{
 .card{
   background-color: var(--tan);
   width: 100%;
-  height: 300px;
-
+  height: 340px;
 
 }
+
 .card.horizontal .card-image img{
   height: 180px;
   margin: 20px 10px 10px 20px;
@@ -158,6 +332,8 @@ h3, #blog-title{
 
 .card .card-action{
   border: none;
+  padding: 0;
+  padding-right: 10px
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating){
@@ -170,6 +346,31 @@ h3, #blog-title{
 
 .second-line{
   font-size: 1.5em
+}
+
+.third-line{
+  font-size: 1.2em;
+  display: inline;
+  float: right
+
+}
+
+#rabbi-btn{
+  position: relative;
+  top: 40px
+}
+
+.card-btn{
+ /*background-color: #c9b191;*/
+ background-color: var(--dark-blue);
+ border: none;
+ margin: 15px;
+}
+
+.card-btn:hover{
+  background-color: var(--light-blue);
+  color: #fff
+
 }
 #card-title{
 
@@ -198,14 +399,57 @@ h3, #blog-title{
   font-weight: 400
 }
 
+#peopleDiv h5{
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+  font-weight: 600;
+  color: #666870;
+  margin: 5px;
 
+}
+
+#who-bottom{
+  margin-bottom: 0;
+  padding-top: 10px;
+}
+
+#who-top{
+  padding-bottom: 0;
+  margin-bottom: 5px;
+}
+
+/*#words1{
+  position: relative;
+  left: 5%;
+}
+
+#words2{
+  position: relative;
+  padding: 0;
+  display: inline;
+  float: left
+}
+
+#words3{
+  padding: 0;
+  position: relative;
+
+  display: inline;
+  float: left
+}
+
+#words4{
+  display: block;
+  padding-top: 10%
+
+}*/
 
 
 
 
 /*Events Div*/
 
-.collapsible-header p{
+/*.collapsible-header p{
   font-family: 'Bree Serif', serif;
   color: #F2F7F9;
   font-size: 20px
@@ -226,7 +470,67 @@ h3, #blog-title{
 }
 
 .collapsible{
-  margin-top: 15%;
+  margin-top: 15%;*/
+
+
+
+
+
+.modal{
+  border-radius: 5px;
+  background-color: var(--tan);
+}
+
+.modal-content{
+  min-height: 100%;
+  border-radius: 5px;
+  margin: 0;
+
+}
+
+.modal .modal-content{
+  padding: 0px;
+  background-color: var(--tan);
+  margin: 0;
+}
+
+ .modal .modal-footer{
+  background-color: var(--tan);
+  position: absolute;
+  bottom: 0px;
+  padding-right: 10px;
+  border-top: none;
+}
+
+.modal-title{
+  font-family: 'Bree Serif', serif;
+  color: var(--dark-blue)
+}
+
+.modal .modal-header{
+  border-bottom: 3px solid var(--dark-blue)
+}
+
+.modal-body{
+  padding: 24px 0 0 40px;
+  font-weight: bold;
+  color: #E2E2E2
+}
+
+.carousel.carousel-slider{
+  margin-top: 12.8%
+}
+
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;
+}
+
+.carousel.carousel-slider .carousel-item p{
+  font-size: 1em;
+}
+
+th{
+  color: var(--dark-blue)
 }
 
 
@@ -254,7 +558,7 @@ h3, #blog-title{
   margin: 0 0;
   font-family: 'Bree Serif', serif;
   color: var(--dark-blue);
-  font-size: 1.1em
+  font-size: 1.1em;
 
 }
 
@@ -262,7 +566,11 @@ h3, #blog-title{
   text-decoration: none;
   color: var(--dark-blue);
   font-family: 'Bree Serif', serif;
-  font-size: 1.1em
+  font-size: 1.1em;
+}
+
+#temple-email:hover{
+  color: var(--light-blue)
 }
 
 
@@ -305,7 +613,7 @@ h3, #blog-title{
 }
 
 .blog-body{
-  background-color: var(--background2);
+  background-color: #e2f6ff;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -344,7 +652,7 @@ h3, #blog-title{
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: var(--background2)
+  background-color: #e2f6ff;
 }
 
 
@@ -359,11 +667,28 @@ h3, #blog-title{
 
 
 
-#community-dropdown{
+#worship-dropdown{
   left: -35px;
 
 }
 
-#community-dropdown li{
+#community-dropdown li,
+#education-dropdown li,
+#worship-dropdown li,
+#about-dropdown li{
   width: 100%
+}
+
+
+
+
+.ex{
+  min-height: 1000px;
+
+}
+
+
+
+.collapsible-body img{
+  max-width: 100%
 }

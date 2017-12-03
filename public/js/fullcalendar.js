@@ -14598,10 +14598,10 @@ var StandardTheme = Theme.extend({
 	classes: {
 		widget: 'fc-unthemed',
 		widgetHeader: 'fc-widget-header',
-		widgetContent: 'fc-widget-content',
+		widgetContent: 'fc-widget-content calendar',
 
 		buttonGroup: 'fc-button-group',
-		button: 'fc-button',
+		button: 'fc-button button',
 		cornerLeft: 'fc-corner-left',
 		cornerRight: 'fc-corner-right',
 		stateDefault: 'fc-state-default',
@@ -14614,11 +14614,11 @@ var StandardTheme = Theme.extend({
 		popoverContent: 'fc-widget-content',
 
 		// day grid
-		headerRow: 'fc-widget-header',
-		dayRow: 'fc-widget-content',
+		headerRow: 'fc-widget-header calendar',
+		dayRow: 'fc-widget-content calendar',
 
 		// list view
-		listView: 'fc-widget-content'
+		listView: 'fc-widget-content calendar'
 	},
 
 	baseIconClass: 'fc-icon',
@@ -14664,7 +14664,7 @@ var JqueryUiTheme = Theme.extend({
 
 		// day grid
 		headerRow: 'ui-widget-header',
-		dayRow: 'ui-widget-content',
+		dayRow: 'ui-widget-content ',
 
 		// list view
 		listView: 'ui-widget-content'

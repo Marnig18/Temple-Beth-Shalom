@@ -14,25 +14,27 @@
 		<!--Icons  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Bree+Serif|Open+Sans:400,600,700,800" rel="stylesheet">
-
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:600i" rel="stylesheet">
+		<!-- jQuery -->
 		<script src="/js/jquery/jquery-1.11.3.min.js"></script>
-	<!-- Full Calender -->
-		<link rel='stylesheet' href='/styles/fullcalendar.css' />
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-	 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js"></script>
-		<!-- <script src='lib/jquery.min.js'></script>
-		<script src='lib/moment.min.js'></script> -->
+		<!-- Full Calender -->
+		<link rel='stylesheet' href='/styles/fullcalendar.css' />
+		<!-- Moment -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js"></script>
 		<script src='/js/fullcalendar.js'></script>
 		<script src="/js/calander.js"></script>
+		<script type='text/javascript' src='/js/gcal.js'></script>
 		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-		<!-- <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
-		<script src='lib/jquery.min.js'></script>
-		<script src='lib/moment.min.js'></script>
-		<script src='fullcalendar/fullcalendar.js'></script> -->
-		<!-- jQuery -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+
+
 
 		<!-- Materialize JavaScript -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+
+
 
 
 
@@ -50,10 +52,11 @@
 	</head>
 	<body>
 
-
-		<nav>
+	<header>
+		<nav class="nav-extended">
 			<div class="nav-wrapper">
-				<a href="/" class="brand-logo">TBS</a>
+				<a href="/" class="brand-logo">Temple Beth Shalom</a>
+
 				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
 					{{# each navLinks}}
@@ -61,16 +64,39 @@
 						<a href="{{ href }}">{{ label }}</a>
 					</li>
 					{{/each}}
-				<li class='dropdown'><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Community<span class="caret"></span></a>
-					<ul id="community-dropdown" class="dropdown-menu">
-						{{# each community}}
-						<li {{#ifeq ../section key}} class="active"{{else}}{{/ifeq}}>
-							<a href="{{ href }}">{{ label }}</a>
-						</li>
-
-						{{/each}}
-					</ul>
-				</li>
+					<li class='dropdown'><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About<span class="caret"></span></a>
+						<ul id="about-dropdown" class="dropdown-menu">
+							{{# each about}}
+							<li {{#ifeq ../section key}} class="active"{{else}}{{/ifeq}}>
+								<a href="{{ href }}">{{ label }}</a>
+							</li>
+							{{/each}}
+						</ul>
+					<li class='dropdown'><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Community<span class="caret"></span></a>
+						<ul id="community-dropdown" class="dropdown-menu">
+							{{# each community}}
+							<li {{#ifeq ../section key}} class="active"{{else}}{{/ifeq}}>
+								<a href="{{ href }}">{{ label }}</a>
+							</li>
+							{{/each}}
+						</ul>
+					</li>
+					<li class='dropdown'><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Education<span class="caret"></span></a>
+						<ul id="education-dropdown" class="dropdown-menu">
+							{{# each education}}
+							<li {{#ifeq ../section key}} class="active"{{else}}{{/ifeq}}>
+								<a href="{{ href }}">{{ label }}</a>
+							</li>
+							{{/each}}
+						</ul>
+					<li class='dropdown'><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Holidays/Worship<span class="caret"></span></a>
+						<ul id="worship-dropdown" class="dropdown-menu">
+							{{# each worship}}
+							<li {{#ifeq ../section key}} class="active"{{else}}{{/ifeq}}>
+								<a href="{{ href }}">{{ label }}</a>
+							</li>
+							{{/each}}
+						</ul>
 				</ul>
 
 
@@ -81,6 +107,39 @@
 						<a href="{{ href }}">{{ label }}</a>
 					</li>
 					{{/each}}
+					<li class='dropdown'><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About<span class="caret"></span></a>
+						<ul id="about-dropdown" class="dropdown-menu">
+							{{# each about}}
+							<li {{#ifeq ../section key}} class="active"{{else}}{{/ifeq}}>
+								<a href="{{ href }}">{{ label }}</a>
+							</li>
+							{{/each}}
+						</ul>
+					<li class='dropdown'><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Community<span class="caret"></span></a>
+						<ul id="community-dropdown" class="dropdown-menu">
+							{{# each community}}
+							<li {{#ifeq ../section key}} class="active"{{else}}{{/ifeq}}>
+								<a href="{{ href }}">{{ label }}</a>
+							</li>
+							{{/each}}
+						</ul>
+					</li>
+					<li class='dropdown'><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Education<span class="caret"></span></a>
+						<ul id="education-dropdown" class="dropdown-menu">
+							{{# each education}}
+							<li {{#ifeq ../section key}} class="active"{{else}}{{/ifeq}}>
+								<a href="{{ href }}">{{ label }}</a>
+							</li>
+							{{/each}}
+						</ul>
+					<li class='dropdown'><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Holidays/Worship<span class="caret"></span></a>
+						<ul id="worship-dropdown" class="dropdown-menu">
+							{{# each worship}}
+							<li {{#ifeq ../section key}} class="active"{{else}}{{/ifeq}}>
+								<a href="{{ href }}">{{ label }}</a>
+							</li>
+							{{/each}}
+						</ul>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					{{#if user}}
@@ -90,15 +149,14 @@
 					{{/if}}
 				</ul>
 			</div>
-		</nav>
-			<div class="container" id="header">
-				<div class="row">
-					<div class="col s12 center-align">
-						<h1>Temple Beth Shalom</h1>
-						<h5>at Manalapan</h5>
-					</div>
-				</div>
+			<div class="nav-content">
+				<p>Manalapan, NJ</p>
 			</div>
+		</nav>
+
+		</header>
+
+
 
 		<div id="body">
 			<!--
@@ -131,12 +189,13 @@
 			{{/if}}
 			<!-- The content block should contain the body of your template's content-->
 			{{{body}}}
+
 		</div>
-		<div class="container">
+		<!-- <div class="container">
 			<div id="footer">
 				<p>Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.</p>
 			</div>
-		</div>
+		</div> -->
 		{{!--
 			//- jQuery 1.11.3 is included by default, and required by both Bootstrap
 			//- and the KeystoneJS Content Editor. If you are not targeting IE8,
@@ -147,10 +206,66 @@
 			//- Customise which Bootstrap javascript files are served by including
 			//- them specifically here, instead of bootstrap-3.3.5.min.js
 		--}}
+
+
 		<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
+			<script src="/js/materialize.min.js"></script>
 
 
 		{{{isAdminEditorJS user}}}
+
+
+		<footer class="page-footer">
+	    <div class="container">
+	      <div class="row">
+	        <div class="col s12">
+	          <h5 class="white-text">Temple Beth Shalom</h5>
+					<div>
+				</div>
+				<div class="row">
+					<div class="col l4 s12 footer-column">
+						<p>Community</p>
+						<ul>
+	            <li><a class="grey-text text-lighten-3" href="/blog">Reb on the Web</a></li>
+	            <li><a class="grey-text text-lighten-3" href="/teencommittee">Teen Committee</a></li>
+	            <li><a class="grey-text text-lighten-3" href="/sisterhood">Sisterhood</a></li>
+	            <li><a class="grey-text text-lighten-3" href="/mensclub">Mens Club</a></li>
+							<li><a class="grey-text text-lighten-3" href="/tbscares">TBS Cares</a></li>
+	          </ul>
+	        </div>
+	        <div class="col l4  s12 footer-column">
+	          <p class="white-text">Education</p>
+	          <ul>
+	            <li><a class="grey-text text-lighten-3" href="/religiousschool">Religious School</a></li>
+	            <li><a class="grey-text text-lighten-3" href="/bnaimitzvah">B'nai Mitzvah</a></li>
+	            <li><a class="grey-text text-lighten-3" href="/adultedu">Adult Education</a></li>
+	          </ul>
+						<p class="white-text">Worship</p>
+						<ul>
+							<li><a class="grey-text text-lighten-3" href="/highholidays">High Holidays</a></li>
+							<li><a class="grey-text text-lighten-3" href="/prayers">Prayers</a></li>
+						</ul>
+	        </div>
+					<div class="col l4  s12 footer-column">
+	          <p class="white-text">About</p>
+	          <ul>
+	            <li><a class="grey-text text-lighten-3" href="#philosophyDiv">Philosophy</a></li>
+	            <li><a class="grey-text text-lighten-3" href="#eventsDiv">Calendar</a></li>
+	            <li><a class="grey-text text-lighten-3" href="/board">Board of Trustees</a></li>
+						 	<li><a class="grey-text text-lighten-3" href="#locationDiv">Location</a></li>
+							<li><a class="grey-text text-lighten-3" href="/staff">Staff</a></li>
+	          </ul>
+	        </div>
+	      </div>
+	    </div>
+	    <div class="footer-copyright">
+	      <div class="container">
+	      © 2014 Copyright Text
+	      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+	      </div>
+	    </div>
+    </footer>
+
 
 
 	</body>
@@ -158,6 +273,8 @@
 	<script>
 	$(document).ready(function(){
 		$(".drop-community").dropdown();
+		$(".button-collapse").sideNav();
+
 
 
 
