@@ -32,7 +32,9 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'N',
-	'mongo': process.env.MONGO_URI || 'mongodb://localhost:27017/temple-beth-shalom'
+	'mongo': process.env.MONGO_URL || 'mongodb://heroku_mj0cv2g9:heroku_mj0cv2g9>@ds133816.mlab.com:33816/heroku_mj0cv2g9',
+	'NODE_ENV': process.env.NODE_ENV || "production"
+
 
 
 
