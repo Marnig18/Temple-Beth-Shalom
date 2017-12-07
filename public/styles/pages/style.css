@@ -50,6 +50,10 @@ nav ul{
   bottom: 15px;
 }
 
+.navbar-fixed{
+  height: 83px
+}
+
 #body{
   background-color: var(--background2)
 }
@@ -151,21 +155,12 @@ a.disabled {
   flex-basis: 60%
 
 
-
-  /*box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
-  /*border-bottom: 9px solid  #bfeaff;
-  border-top: 9px solid  #bfeaff;
-*/
-
-
-
 }
 
 
-/*#header img{
-  width: 100%;
+.signIn{
+  color: whit;
 }
-*/
 
 #scroll-left{
 
@@ -182,7 +177,8 @@ a.disabled {
 
 
 .page-footer{
-  background-color: var(--dark-blue)
+  background-color: var(--dark-blue);
+  margin-top; 0
 }
 
 .footer-column p{
@@ -691,4 +687,61 @@ th{
 
 .collapsible-body img{
   max-width: 100%
+}
+
+
+
+.player{
+    border: 5px solid var(--dark-blue);
+}
+
+.progress__filled {
+  /*width:50%;*/
+  background:#ffc600;
+  flex:0;
+  flex-basis:50%;
+}
+
+
+.info p{
+  padding: 7%;
+  background-color: var(--tan);
+  border-radius: 5px;
+  margin-top: 2%;
+  line-height: 2em;
+  font-size: 1.1em
+
+}
+
+
+.info{
+  background-color:#e2f6ff;
+  padding-bottom: 7%;
+}
+
+.stuff{
+  padding-bottom: 5%;
+}
+
+
+#img2{
+  display: inline;
+  float: left
+}
+
+
+#img-div{
+  padding: 0 0;
+}
+
+
+
+h4{
+  font-family:'Bree Serif', serif;
+  color:var(--dark-blue);
+  padding: 3% 0;
+}
+
+.stuff i{
+  font-size: 48px;
 }

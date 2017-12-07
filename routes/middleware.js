@@ -51,6 +51,7 @@ exports.initLocals = function (req, res, next) {
 		{label: "Board of Trustees", key: 'board', href: '/board'},
 		{label: "Location", key: 'location', href: '#locationDiv'},
 		{label: "Staff", key: 'staff', href: '/staff'},
+		{label: "Gallery", key: 'gallery', href: '/gallery'}
 	]
 
 

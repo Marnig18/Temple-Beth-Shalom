@@ -15,6 +15,7 @@ Gallery.add({
 	publishedDate: { type: Date, default: Date.now },
 	heroImage: { type: Types.CloudinaryImage },
 	images: { type: Types.CloudinaryImages },
+	categories: { type: Types.Relationship, ref: 'GalleryCategory', many: true }
 });
 
 Gallery.register();

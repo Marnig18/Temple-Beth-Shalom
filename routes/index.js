@@ -51,6 +51,7 @@ exports = module.exports = function (app) {
 	app.get('/teencommittee', routes.views.teen);
 	app.get('/staff', routes.views.staff);
 	app.get('/prayers', routes.views.prayers);
+	app.get('/gallery', routes.views.gallery)
 	// app.get('/', routes.api.eventController);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:

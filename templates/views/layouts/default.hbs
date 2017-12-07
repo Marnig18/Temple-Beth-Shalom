@@ -54,6 +54,7 @@
 	<body>
 
 	<header>
+	<div class="navbar-fixed">
 		<nav class="nav-extended">
 			<div class="nav-wrapper">
 				<a href="/" class="brand-logo">Temple Beth Shalom</a>
@@ -142,19 +143,13 @@
 							{{/each}}
 						</ul>
 				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					{{#if user}}
-					<li><a href="/keystone/signout">Sign Out</a></li>
-					{{else}}
-					<li><a href="/keystone/signin">Sign In</a></li>
-					{{/if}}
-				</ul>
+
 			</div>
 			<div class="nav-content">
 				<p>Manalapan, NJ</p>
 			</div>
 		</nav>
-
+	</div>
 		</header>
 
 
@@ -256,6 +251,13 @@
 						 	<li><a class="grey-text text-lighten-3" href="#locationDiv">Location</a></li>
 							<li><a class="grey-text text-lighten-3" href="/staff">Staff</a></li>
 	          </ul>
+						<ul >
+							{{#if user}}
+							<li><a class="grey-text text-lighten-3" href="/keystone/signout">Sign Out</a></li>
+							{{else}}
+							<li><a class="grey-text text-lighten-3" href="/keystone/signin">Sign In</a></li>
+							{{/if}}
+						</ul>
 	        </div>
 	      </div>
 	    </div>
