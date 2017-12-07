@@ -1,1 +1,1 @@
-web: keystone.js
+web: node keystone.js
