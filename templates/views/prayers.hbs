@@ -32,7 +32,7 @@
                 </div>
                 <div class="col s11">
                   <div class="progress">
-                    <div class="progress-bar progress__filled" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar progress__filled" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-bar="before-torah"></div>
                   </div>
                 </div>
               </div>
@@ -47,7 +47,7 @@
             <p>Blessing After the Torah Reading</p>
           </div>
           <div class="col s4" >
-              <p><i class="material-icons audio-icon" data-audio="after-torah">audiotrack</i>audio</p>
+              <p><i class="material-icons audio-icon" data-bar="after-torah">audiotrack</i>audio</p>
           </div>
           <div class="col s4">
             <p><i class="material-icons">title</i>text</p>
@@ -55,11 +55,16 @@
         </div>
           <div class="collapsible-body">
             <div class="row">
-              <div class="col s6 offset-s3 player">
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="col s7 offset-s2 player">
+                  <div class="col s1">
+                    <i class="material-icons" id="play-btn" data-audio="after-torah">play_arrow</i>
+                  </div>
+                  <div class="col s11">
+                    <div class="progress">
+                      <div class="progress-bar progress__filled" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
                 </div>
-              </div>
             </div>
           <img src="/audio/text/torah-after.gif" alt='blessing-after-the-torah'>
         </div>
@@ -88,6 +93,16 @@
           </div>
         </div>
         <div class="collapsible-body">
+          <div class="col s7 offset-s2 player">
+              <div class="col s1">
+                <i class="material-icons" id="play-btn" data-audio="before-haftorah">play_arrow</i>
+              </div>
+              <div class="col s11">
+                <div class="progress">
+                  <div class="progress-bar progress__filled" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-audio="before-haftorah"></div>
+                </div>
+              </div>
+            </div>
           <img src="/audio/text/haftorah-before.gif" alt='haftorah-before'>
         </div>
       </li>
@@ -104,6 +119,16 @@
           </div>
         </div>
         <div class="collapsible-body">
+          <div class="col s7 offset-s2 player">
+              <div class="col s1">
+                <i class="material-icons" id="play-btn" data-audio="after-haftorah">play_arrow</i>
+              </div>
+              <div class="col s11">
+                <div class="progress">
+                  <div class="progress-bar progress__filled" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
           <img src="/audio/text/haftorah-after.jpg" alt='haftorah-after'>
         </div>
       </li>
@@ -111,19 +136,20 @@
   </div>
 </div>
 
-<audio class="torah" data-audio="before-torah" src="/audio/audio/Torah-Before.mp3" preload="auto" ></audio>
+<audio class="torah" data-audio="before-torah" data-bar="before-torah" src="/audio/audio/Torah-Before.mp3" preload="auto" ></audio>
 <audio class="torah" data-audio="after-torah" src="/audio/audio/Torah-After.mp3" preload="auto" ></audio>
-
+<audio class="haftorah" data-audio="before-haftorah" src="/audio/audio/Haftarah-before.mp3" preload="auto" ></audio>
+<audio class="haftorah" data-audio="after-torah" src="/audio/audio/Torah-After.mp3" preload="auto" ></audio>
 
 
 <script>
 
   const icons = Array.from(document.getElementsByClassName('audio-icon'))
-  const playBtns = document.querySelector('#play-btn')
+  const playBtns = document.querySelectorAll('#play-btn')
   const collapsibles = document.querySelector('.collapsible')
-  const progressBar = document.querySelector('.progress-bar')
 
-  console.log(icons)
+
+  console.log(playBtns)
 
 
 // functions
@@ -134,6 +160,7 @@ function getPrayer(){
 }
 
 function togglePlay(e) {
+  console.log(e)
   var id = e.srcElement.dataset.audio
   var idString = id.toString();
   console.log(idString)
@@ -141,27 +168,49 @@ function togglePlay(e) {
   const method = prayer.paused ? 'play' : 'pause';
   prayer[method]();
 
-  prayer.addEventListener('play', updateButton);
-  prayer.addEventListener('pause', updateButton)
+
+  prayer.addEventListener('play', function(){
+    console.log(this)
+    const icon = this.paused ? 'play_arrow' : 'pause';
+
+    e.srcElement.innerHTML = icon;
+  });
+
+    prayer.addEventListener('pause', function(){
+      console.log(this)
+      const icon = this.paused ? 'play_arrow' : 'pause';
+
+      e.srcElement.innerHTML = icon;
+    });
+
+    prayer.addEventListener('timeupdate', function(){
+      const percent = (prayer.currentTime / prayer.duration) * 100;
+      const progressBar = e.path[2].lastElementChild.childNodes[1].children[0]
+
+      console.log(progressBar)
+
+      progressBar.style.width = `${percent}%`;
+    })
+
+
 
 }
 
-function updateButton() {
-  console.log(this)
-  const icon = this.paused ? 'play_arrow' : 'pause';
 
-  playBtns.textContent = icon;
-}
-function handleProgress() {
-  const percent = (prayer.currentTime / prayer.duration) * 100;
-  progressBar.style.flexBasis = `${percent}%`;
-}
+
+// function handleProgress() {
+//   const percent = (prayer.currentTime / prayer.duration) * 100;
+//
+//   progressBar.aria
+// }
 
 
 
 
 
-playBtns.addEventListener('click', togglePlay);
+
+playBtns.forEach(playBtn => playBtn.addEventListener('click', togglePlay));
+
 
 
 

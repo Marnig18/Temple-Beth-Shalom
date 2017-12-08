@@ -46,10 +46,10 @@ exports.initLocals = function (req, res, next) {
 	]
 
 	res.locals.about = [
-		{label: "Philosophy", key: 'philosohy', href: '#philosophyDiv'},
-		{label: "Calendar", key: 'calendar', href: '#eventsDiv'},
+		{label: "Philosophy", key: 'philosophy', href: '/#philosophyDiv'},
+		{label: "Calendar", key: 'calendar', href: '/#eventsDiv'},
 		{label: "Board of Trustees", key: 'board', href: '/board'},
-		{label: "Location", key: 'location', href: '#locationDiv'},
+		{label: "Location", key: 'location', href: '/#locationDiv'},
 		{label: "Staff", key: 'staff', href: '/staff'},
 		{label: "Gallery", key: 'gallery', href: '/gallery'}
 	]

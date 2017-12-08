@@ -39,6 +39,15 @@ nav{
   padding-left: 30px;
   font-family: 'Bree Serif', serif;
 }
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 0 auto;
+}
 
 nav ul{
   padding-top: 10px;
