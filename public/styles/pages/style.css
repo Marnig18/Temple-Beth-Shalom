@@ -133,6 +133,7 @@ a.disabled {
   display: flex;
   flex-direction: row;
   width: 100%;
+  /*border-bottom: 10px solid var(--dark-blue);*/
 
 }
 .whole-head{
@@ -197,15 +198,18 @@ a.disabled {
 
 
 
-
+.page-body{
+  background-color: #e8f6fc;
+}
 
 
 
 
 #philosophyDiv{
-  background-color: #e2f6ff;
+  background-color: #e8f6fc;
   margin-bottom: 0;
   margin-top: 0;
+  border-top: 10px solid var(--dark-blue);
 }
 
 
@@ -215,6 +219,7 @@ a.disabled {
   background-color: #e2f6ff;
   margin-bottom: 0;
   margin-top: 0;
+  border-bottom: 10px solid var(--dark-blue);
 
   /*max-height: 100vh;*/
   /*margin: 0;*/
@@ -223,7 +228,7 @@ a.disabled {
 
 #peopleDiv{
   margin-top: 0;
-  background: linear-gradient(to bottom right, rgba(51, 153, 204,0.65), white);
+  background: linear-gradient(to bottom right, #E0FB93, white);
   border-top: 10px solid var(--dark-blue);
   border-bottom: 10px solid var(--dark-blue);
 }
@@ -618,7 +623,7 @@ th{
 }
 
 .blog-body{
-  background-color: #e2f6ff;
+  background-color: #e8f6fc;
   margin: 0;
   padding: 0;
   width: 100%;
