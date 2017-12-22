@@ -200,6 +200,7 @@ a.disabled {
 
 .page-body{
   background-color: #e8f6fc;
+  margin-bottom: 0;
 }
 
 
@@ -758,4 +759,38 @@ h4{
 
 .stuff i{
   font-size: 48px;
+}
+
+.prayer-header{
+  font-family: 'Bree Serif', serif;
+  color: var(--dark-blue)
+}
+
+
+.collapsible-header{
+  margin-bottom: 0;
+  background-color:#225560;
+  border-bottom: 2px solid #1c4d56;
+}
+
+.collapsible-header:hover{
+  background-color: var(--light-blue);
+  border-bottom: 0;
+
+}
+
+.collapsible-header:active{
+  background-color: var(--light-blue);
+  border-bottom: 0;
+
+}
+
+.collapsible-header p{
+  color: #ACBDBA;
+  font-weight: 600;
+  margin: 0 0 0;
+}
+
+.collapsible-header p:hover{
+  color: #fff;
 }
