@@ -617,7 +617,7 @@
 
 <audio class="torah" data-audio="before-torah" data-bar="before-torah" src="/audio/audio/Torah-Before.mp3" preload="auto" ></audio>
 <audio class="torah" data-audio="after-torah" src="/audio/audio/Torah-After.mp3" preload="auto" ></audio>
-<audio class="haftorah" data-audio="before-haftorah" src="/audio/audio/Haftarah-before.mp3" preload="auto" ></audio>
+<audio class="haftorah" data-audio="before-haftorah" src="/audio/audio/Haftarah-Before.mp3" preload="auto" ></audio>
 <audio class="haftorah" data-audio="after-haftorah-p1" src="/audio/audio/Haftarah-After-P1.mp3" preload="auto" ></audio>
 <audio class="haftorah" data-audio="after-haftorah-p2" src="/audio/audio/Haftarah-After-P2.mp3" preload="auto" ></audio>
 <audio class="haftorah" data-audio="after-haftorah-p3" src="/audio/audio/Haftarah-After-P3.mp3" preload="auto" ></audio>
@@ -661,7 +661,11 @@ function getPrayer(){
   if (!prayer) return;
 }
 
+
+
 function togglePlay(e) {
+
+  debugger
   console.log(e)
   var id = e.srcElement.dataset.audio
   var idString = id.toString();
