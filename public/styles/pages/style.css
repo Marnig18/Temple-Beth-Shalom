@@ -383,7 +383,8 @@ h3, #blog-title{
 .third-line{
   font-size: 1.2em;
   display: inline;
-  float: right
+  float: right;
+  line-height: 1.3em;
 
 }
 
