@@ -53,6 +53,8 @@ nav ul{
   padding-top: 10px;
 }
 
+
+
 .nav-content p{
   margin-bottom: 0;
   position: relative;
@@ -207,10 +209,15 @@ a.disabled {
 
 
 #philosophyDiv{
-  background-color: #e8f6fc;
+  /* background-color: #e8f6fc; */
+  /* background-color: #e2f3ff; */
+    background-color: #e2f6ff;
   margin-bottom: 0;
   margin-top: 0;
   border-top: 10px solid var(--dark-blue);
+
+
+
 }
 
 
@@ -220,7 +227,7 @@ a.disabled {
   background-color: #e2f6ff;
   margin-bottom: 0;
   margin-top: 0;
-  border-bottom: 10px solid var(--dark-blue);
+  /* border-bottom: 10px solid var(--dark-blue); */
 
   /*max-height: 100vh;*/
   /*margin: 0;*/
@@ -229,9 +236,9 @@ a.disabled {
 
 #peopleDiv{
   margin-top: 0;
-  background: linear-gradient(to bottom right, #E0FB93, white);
-  border-top: 10px solid var(--dark-blue);
-  border-bottom: 10px solid var(--dark-blue);
+  /* background: linear-gradient(to bottom right, #E0FB93, white); */
+  background-color: var(--dark-blue);
+
 }
 
  #locationDiv{
@@ -279,8 +286,22 @@ p, h4{
   font-family: 'Open Sans', sans-serif;
 }
 
+p{
+  line-height: 1.5em
+}
 
 
+
+.blog-body{
+  background-image: url('../../images/glasses.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+   /* Create the parallax scrolling effect */
+   background-attachment: fixed;
+
+}
 
 
 h3, #blog-title{
@@ -368,7 +389,18 @@ h3, #blog-title{
 
 #rabbi-btn{
   position: relative;
-  top: 40px
+  top: 40px;
+}
+
+#cantor-btn{
+  position: relative;
+  bottom: 5px;
+}
+
+
+#cantor-card-action{
+  position: relative;
+  bottom: 3px;
 }
 
 .card-btn{
@@ -414,7 +446,8 @@ h3, #blog-title{
   font-family: 'Open Sans', sans-serif;
   font-style: italic;
   font-weight: 600;
-  color: #666870;
+  /* color: #666870; */
+  color: white;
   margin: 5px;
 
 }
@@ -478,6 +511,7 @@ h3, #blog-title{
 
 .collapsible-body p{
   color: #F2F7F9;
+
 }
 
 .collapsible{
@@ -529,7 +563,8 @@ h3, #blog-title{
 }
 
 .carousel.carousel-slider{
-  margin-top: 12.8%
+  margin-top: 12.8%;
+  background-color:#E8573A;
 }
 
 ul.nav li.dropdown:hover > ul.dropdown-menu {
@@ -538,6 +573,9 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 
 .carousel.carousel-slider .carousel-item p{
   font-size: 1em;
+  margin: 0 15px;
+  line-height: 1.5em
+  /* text-align: justify; */
 }
 
 th{
@@ -598,6 +636,17 @@ th{
   padding-top: 30px
 }
 
+#indiv-article-content{
+  background-color: rgba(255, 255, 255, 05);
+  padding: 0 100px;
+
+}
+
+
+#indiv-article-content{
+  background-color: rgba(255,255,255,0.8)
+}
+
 #indiv-article-content p{
 
   color: var(--dark-blue);
@@ -611,10 +660,6 @@ th{
 .links:hover{
   text-decoration: none;
 }
-
-
-
-
 
 
 
@@ -689,7 +734,9 @@ th{
 #about-dropdown li{
   width: 100%
 }
-
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus{
+  background-color: var(--light-blue)
+}
 
 
 
@@ -707,12 +754,36 @@ th{
 
 
 .player{
-    border: 5px solid var(--dark-blue);
+    /* border: 5px solid var(--dark-blue);
+    border-radius: 1%; */
+    background-color: #f7f7f7;
+
 }
+
+.progress{
+  margin-top: 12px;
+  background-color: var(--dark-blue)
+}
+
+.time{
+  margin-right: : 20px;
+  margin-top: 6px;
+}
+
+#play-btn{
+  border: none;
+  /* background-color: #E9F6FC; */
+  background-color: #f7f7f7;
+  margin-top: 5px;
+  position: relative;
+  right: 10px;
+}
+
+
 
 .progress__filled {
   /*width:50%;*/
-  background:#ffc600;
+  background: var(--light-blue);
   flex:0;
   flex-basis:50%;
 }
@@ -769,12 +840,12 @@ h4{
 
 .collapsible-header{
   margin-bottom: 0;
-  background-color:#225560;
-  border-bottom: 2px solid #1c4d56;
+  background-color:#E8573A;
+  border-bottom: 2px solid #e84525;
 }
 
 .collapsible-header:hover{
-  background-color: var(--light-blue);
+  background-color: #ed7c68;
   border-bottom: 0;
 
 }
@@ -786,11 +857,17 @@ h4{
 }
 
 .collapsible-header p{
-  color: #ACBDBA;
+  padding: 5px 0;
+  color: #FFFFFA;
   font-weight: 600;
+  font-size: 1.1em;
   margin: 0 0 0;
 }
 
 .collapsible-header p:hover{
   color: #fff;
+}
+
+.collapsible-body{
+  background-color: white;
 }

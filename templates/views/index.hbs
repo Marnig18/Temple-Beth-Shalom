@@ -92,7 +92,7 @@
 				 <a class="btn waves-effect white grey-text darken-text-2">button</a>
 			 </div> -->
 			 	{{# each data.happenings}}
-				 <div class="carousel-item blue white-text" href="#one!">
+				 <div class="carousel-item  white-text" href="#one!">
 					 <h2>{{{title}}}</h2>
 					 <p class="white-text"> {{{description}}}</p>
 				 </div>
@@ -230,8 +230,9 @@ $('.carousel.carousel-slider').carousel({fullWidth: true});
 								container:'body',
 								placement: 'left',
 								trigger: 'hover',
-								title: event.title,
-								content: date + '<br />' + event.description
+								html: 'true',
+								title: '<p style="font-weight: bold;">' + event.title + '<p>',
+								content: '<p>' + date + '</p>'  + '</br>'+ '<p>' + event.description + '</p>'
 							})
 							.popover()
 					} else {
@@ -241,8 +242,9 @@ $('.carousel.carousel-slider').carousel({fullWidth: true});
 								container:'body',
 								placement: 'left',
 								trigger: 'hover',
-								title: event.title,
-								content: date
+								html: 'true',
+								title: '<p style="font-weight: bold;">' + event.title + '<p>',
+								content: '<p>' + date + '</p>' 
 							})
 							.popover()
 					}

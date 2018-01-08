@@ -22,12 +22,13 @@
 		<link rel='stylesheet' href='/styles/fullcalendar.css' />
 		<!-- Moment -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 		<script src="/js/moment-timezone.js"></script>
 		<script src='/js/fullcalendar.js'></script>
 		<script src="/js/calander.js"></script>
 		<script type='text/javascript' src='/js/gcal.js'></script>
 		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
 
 
 
@@ -69,7 +70,7 @@
 					<li class='dropdown'><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About<span class="caret"></span></a>
 						<ul id="about-dropdown" class="dropdown-menu">
 							{{# each about}}
-							<li {{#ifeq ../section key}} class="active"{{else}}{{/ifeq}}>
+							<li class="dropdown-item"{{#ifeq ../section key}} class="active"{{else}}{{/ifeq}}>
 								<a href="{{ href }}">{{ label }}</a>
 							</li>
 							{{/each}}
@@ -77,7 +78,7 @@
 					<li class='dropdown'><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Community<span class="caret"></span></a>
 						<ul id="community-dropdown" class="dropdown-menu">
 							{{# each community}}
-							<li {{#ifeq ../section key}} class="active"{{else}}{{/ifeq}}>
+							<li class="dropdown-item" {{#ifeq ../section key}} class="active"{{else}}{{/ifeq}}>
 								<a href="{{ href }}">{{ label }}</a>
 							</li>
 							{{/each}}
@@ -86,7 +87,7 @@
 					<li class='dropdown'><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Education<span class="caret"></span></a>
 						<ul id="education-dropdown" class="dropdown-menu">
 							{{# each education}}
-							<li {{#ifeq ../section key}} class="active"{{else}}{{/ifeq}}>
+							<li class="dropdown-item" {{#ifeq ../section key}} class="active"{{else}}{{/ifeq}}>
 								<a href="{{ href }}">{{ label }}</a>
 							</li>
 							{{/each}}
@@ -94,7 +95,7 @@
 					<li class='dropdown'><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Holidays/Worship<span class="caret"></span></a>
 						<ul id="worship-dropdown" class="dropdown-menu">
 							{{# each worship}}
-							<li {{#ifeq ../section key}} class="active"{{else}}{{/ifeq}}>
+							<li class="dropdown-item" {{#ifeq ../section key}} class="active"{{else}}{{/ifeq}}>
 								<a href="{{ href }}">{{ label }}</a>
 							</li>
 							{{/each}}

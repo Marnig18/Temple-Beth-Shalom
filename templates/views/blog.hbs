@@ -1,10 +1,10 @@
-<div class="container fluid blog-body"  class="main">
+<div class="container fluid blog-body parallax" >
 	<div class="row">
 		<div class="col s12">
 			<h2 id="blog-title"class="center-align">Reb on the Web</h2>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row articles-row">
 		<div class="col s2 hide-on-small-only"></div>
 
 		<!-- <div class="col m2 hide-on-small-only" id="article-titles">
@@ -14,7 +14,7 @@
 			{{/each}}
 		</div> -->
 
-		<div class="col  s12 m8" id="indiv-article-content">
+		<div class="col  s12 m8 parallax" id="indiv-article-content" >
 			{{# each data.posts.results}}
 			<h4 class="center-align" id="indiv-article-title">{{{title}}}</h4>
 			<p>{{{content.brief}}}</p>
@@ -24,7 +24,16 @@
 			<div class="divider" ></div>
 			{{/each}}
 		</div>
-
 		<div class="col s2 hide-on-small-only"></div>
 	</div>
 </div>
+
+
+
+<script>
+
+	$(document).ready(function(){
+		$('.parallax').parallax();
+	});
+
+</script>
