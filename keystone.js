@@ -32,9 +32,9 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'N',
-	'mongo': process.env.MONGOLAB_URL ||
-	"mongodb://heroku_mj0cv2g9:82d9l8rhk97ko1lfkimocihk19@ds133816.mlab.com:33816/heroku_mj0cv2g9",
-  // 'mongo': 	process.env.MONGOLAB_URL || 'mongodb://localhost:27017/temple-beth-shalom',
+	// 'mongo': process.env.MONGOLAB_URL ||
+	// "mongodb://heroku_mj0cv2g9:82d9l8rhk97ko1lfkimocihk19@ds133816.mlab.com:33816/heroku_mj0cv2g9",
+  'mongo': 	process.env.MONGOLAB_URL || 'mongodb://localhost:27017/temple-beth-shalom',
 	'env': "production"
 
 

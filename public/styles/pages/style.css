@@ -631,26 +631,24 @@ th{
 
 #indiv-article-title{
   padding-bottom: 30px;
-  font-size: 30px;
+  font-size: 40px;
   font-family: 'Bree Serif', serif;
   color: var(--dark-blue);
-  padding-top: 30px
+  padding-top: 30px;
+
 }
 
 #indiv-article-content{
-  background-color: rgba(255, 255, 255, 05);
+  background-color: rgba(255,255,255, 0.9);
   padding: 0 100px;
 
-}
-
-
-#indiv-article-content{
-  background-color: rgba(255,255,255,0.8)
 }
 
 #indiv-article-content p{
 
   color: var(--dark-blue);
+  font-size: 1.2em;
+  line-height: 1.7em
 }
 
 
