@@ -21,7 +21,7 @@ var axios = require ('axios')
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
 		{ label: 'Home', key: 'home', href: '/' },
-		{ label: 'Reb on the Web', key: 'blog', href: '/blog' },
+
 		// { label: 'Gallery', key: 'gallery', href: '/gallery' },
 		// { label: 'Contact', key: 'contact', href: '/contact' },
 	]
@@ -30,14 +30,15 @@ exports.initLocals = function (req, res, next) {
 		{label: "Teen Committee", key: 'teen', href: '/teencommittee'},
 		{label: "Sisterhood", key: 'sisterhood', href: '/sisterhood'},
 		{label: "Ritual Committee", key: 'ritual', href: '/ritualcommittee'},
-		{label: "Mens Club", key: 'mens', href: '/mensclub'},
-		{label: "TBS Cares", key: 'TBScares', href: '/tbscares'}
+		{label: "Mens Club", key: 'mens', href: '/mensclub'}
+		// {label: "TBS Cares", key: 'TBScares', href: '/tbscares'}
 	];
 
 	res.locals.education = [
 		{label: "Religious School", key: 'religiousSchool', href: '/religiousschool'},
 		{label: "B'nai Mitzvah", key: 'Bnaimitzvah', href: '/bnaimitzvah'},
-		{label: "Adult Education", key: 'adultedu', href: '/adultedu'}
+		{label: "Adult Education", key: 'adultedu', href: '/adultedu'},
+		{ label: 'Reb on the Web', key: 'blog', href: '/blog' }
 	]
 
 	res.locals.worship = [
