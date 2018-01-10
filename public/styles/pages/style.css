@@ -122,12 +122,15 @@ a.disabled {
 
 #left-cup{
   position: relative;
-  left: 100px
+  left: 100px;
+  max-height: 124px;
+
 }
 
 #right-cup{
   position: relative;
-  left: 110px
+  left: 110px;
+  max-height: 124px;
 }
 
 
@@ -339,9 +342,8 @@ h3, #blog-title{
 
 }
 
-#cupImg{
-  max-height: 200px;
-
+#cupimg{
+  max-height: 220px;
 }
 
 

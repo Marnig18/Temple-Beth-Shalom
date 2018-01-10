@@ -1,19 +1,19 @@
 <div class="container" id="header" class="main">
 	<div class="row flex">
-			<div><img  class="scroll" src="/images/scroll-left.svg" alt="srcoll" id="scroll-left"></div>
+			<div><img class="responsive-img"  class="scroll" src="/images/scroll-left.svg" alt="srcoll" id="scroll-left"></div>
 			<div class="whole-head">
 				<div class="cup-head-div">
-					<img class="cup-head" id="left-cup" src="/images/cup.png">
+					<img class="responsive-img" class="cup-head" id="left-cup" src="/images/cup.png">
 				</div>
 				<div class="center-align header-text">
 					<h1>Temple Beth Shalom</h1>
 					<h5>Manalapan, NJ</h5>
 				</div>
 				<div class="cup-head-div">
-					<img class="cup-head"  id="right-cup" src="/images/cup.png">
+					<img class="responsive-img" class="cup-head"  id="right-cup" src="/images/cup.png">
 				</div>
 			</div>
-			<div><img class="scroll" src="/images/scroll-right.svg" alt='scroll' id="scroll-right"></div>
+			<div><img class="responsive-img" class="scroll" src="/images/scroll-right.svg" alt='scroll' id="scroll-right"></div>
 		</div>
 
 	</div>
@@ -26,7 +26,7 @@
 	<div class="row bottomRow">
 		<div class="col m1 hide-on-small-only"></div>
 		<div class="col m2 hide-on-small-only">
-			<img class="responsive-img" id="cupImg" src="/images/cup.png"/>
+			<img class="responsive-img" id="cupimg" src="/images/cup.png"/>
 		</div>
 		<div class="col s12 m8" id="philText">
 			<p>
@@ -244,7 +244,7 @@ $('.carousel.carousel-slider').carousel({fullWidth: true});
 								trigger: 'hover',
 								html: 'true',
 								title: '<p style="font-weight: bold;">' + event.title + '<p>',
-								content: '<p>' + date + '</p>' 
+								content: '<p>' + date + '</p>'
 							})
 							.popover()
 					}
