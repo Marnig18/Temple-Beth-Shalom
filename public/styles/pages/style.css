@@ -707,7 +707,7 @@ th{
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: #e2f6ff;
+  background-color: #E3F6FE;
 }
 
 
@@ -718,6 +718,11 @@ th{
 
 .post{
   padding: 0 8%
+}
+
+.post p{
+  line-height: 1.8em;
+  font-size: 20px;
 }
 
 
@@ -790,17 +795,17 @@ th{
 
 .info p{
   padding: 7%;
-  background-color: var(--tan);
+  background-color: #E8C547;
   border-radius: 5px;
   margin-top: 2%;
   line-height: 2em;
-  font-size: 1.1em
-
+  font-size: 1.1em;
+  color: var(--dark-blue);
 }
 
 
 .info{
-  background-color:#e2f6ff;
+  background-color:#E3F6FE;
   padding-bottom: 7%;
 }
 
@@ -839,21 +844,21 @@ h4{
 
 .collapsible-header{
   margin-bottom: 0;
-  background-color:#E8573A;
-  border-bottom: 2px solid #e84525;
+  background-color: #546A76;
+  border-bottom: 2px solid #495c66;
 }
 
 .collapsible-header:hover{
-  background-color: #ed7c68;
+  background-color: #647a84;
   border-bottom: 0;
-
 }
 
 .collapsible-header:active{
-  background-color: var(--light-blue);
+  background-color: #647a84;
   border-bottom: 0;
-
 }
+
+
 
 .collapsible-header p{
   padding: 5px 0;
