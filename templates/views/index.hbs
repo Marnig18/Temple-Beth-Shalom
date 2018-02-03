@@ -1,16 +1,16 @@
 <div class="container" id="header" class="main">
-	<div class="row flex">
+	<div class="flex">
 			<div><img class="responsive-img"  class="scroll" src="/images/scroll-left.svg" alt="srcoll" id="scroll-left"></div>
-			<div class="whole-head">
-				<div class="cup-head-div">
-					<img class="responsive-img" class="cup-head" id="left-cup" src="/images/cup.png">
+			<div class="whole-head row">
+				<div class="cup-head-div col s1">
+					<img class="responsive-img cup-head " id="left-cup" src="/images/cup.png">
 				</div>
-				<div class="center-align header-text">
+				<div class= "center-align header-text col s10">
 					<h1>Temple Beth Shalom</h1>
 					<h5>Manalapan, NJ</h5>
 				</div>
-				<div class="cup-head-div">
-					<img class="responsive-img" class="cup-head"  id="right-cup" src="/images/cup.png">
+				<div class="cup-head-div col s1">
+					<img class="responsive-img cup-head"  id="right-cup" src="/images/cup.png">
 				</div>
 			</div>
 			<div><img class="responsive-img" class="scroll" src="/images/scroll-right.svg" alt='scroll' id="scroll-right"></div>
@@ -56,20 +56,20 @@
 		<div class="col s12 m8">
 			<div class="row">
 				<div class="col m12">
-					<h5 class="center-align" id="words1">Conservative-Egalitarian-Caring</h5>
+					<h5 class="center-align words">Conservative-Egalitarian-Caring</h5>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col m6 s12">
-					<h5 class="center-align" id="words2">Contemporary-Challenging</h5>
+					<h5 class="center-align words">Contemporary-Challenging</h5>
 				</div>
 				<div class="col m6 s12">
-					<h5 class="center-align"id="words3">Uplifting-Learning-Celebrating</h5>
+					<h5 class="center-align words">Uplifting-Learning-Celebrating</h5>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col m12">
-					<h5 class="center-align" id="words4">Comforting-Healing-Exploring</h5>
+					<h5 class="center-align words">Comforting-Healing-Exploring</h5>
 				</div>
 			</div>
 		</div>
@@ -85,37 +85,21 @@
 		</div>
 	</div>
 	<div class="row bottomRow">
-		<div class="col m1 hide-on-small-only"></div>
+		<div class="col l1 hide-on-med-and-down"></div>
 		<div class="col s12 m4">
 			<div class="carousel carousel-slider center" data-indicators="true">
-				<!-- <div class="carousel-fixed-item center">
-				 <a class="btn waves-effect white grey-text darken-text-2">button</a>
-			 </div> -->
 			 	{{# each data.happenings}}
 				 <div class="carousel-item  white-text" href="#one!">
 					 <h2>{{{title}}}</h2>
-					 <p class="white-text"> {{{description}}}</p>
+					 <p class="white-text flow-text"> {{{description}}}</p>
 				 </div>
 			 	{{/each}}
-
-			 <!-- <div class="carousel-item amber white-text" href="#two!">
-				 <h2>Food Drive</h2>
-				 <p class="white-text">This is your second panel</p>
-			 </div>
-			 <div class="carousel-item green white-text" href="#three!">
-				 <h2>Third Panel</h2>
-				 <p class="white-text">This is your third panel</p>
-			 </div>
-			 <div class="carousel-item blue white-text" href="#four!">
-				 <h2>Fourth Panel</h2>
-				 <p class="white-text">This is your fourth panel</p>
-			 </div> -->
  	 		</div>
 		</div>
-		<div class="col s12 m6">
+		<div class="col s12 m8 l6">
 			<div id="calendar"></div>
 		</div>
-		<div class="col m1 hide-on-small-only"></div>
+		<div class="col l1 hide-on-med-and-down"></div>
 	</div>
 </div>
 <div  id="locationDiv">
@@ -127,8 +111,8 @@
 	<div class="row bottomRow">
 		<div class="col m1 hide-on-small-only"></div>
 		<div class="col s12 m6">
-			<div id='map'>
-				<iframe width="600" height="450" frameborder="0" style="border:0"
+			<div class='map'>
+				<iframe  frameborder="0" style="border:0"
 				src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJCfv89zLRw4kRENC40Opr8kM&key= AIzaSyAZIJ7U0CnZGDkXpXYubPLyfy-uFgAIpoc" allowfullscreen></iframe>
 			</div>
 		</div>
